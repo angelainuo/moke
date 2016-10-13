@@ -75,7 +75,7 @@
 		<div class="wrap cf">
 			<div class="fl">
 				<h1 class="fl">
-					<a href="index.htm"  data-click="onClick" data-block="GLOBLNAV" data-element="1">
+					<a href="{{ URL('/') }}"  data-click="onClick" data-block="GLOBLNAV" data-element="1">
 					<img src="xuetang.png" title="学堂在线" />
 					</a>
 				</h1>
@@ -108,7 +108,7 @@
         <div class="cf">
             <div class="text fl">
                 <p>Copyright  2013-2016 北京慕华信息科技有限公司</p>
-                <p><a     title="京ICP证140571号" target="_blank">京ICP证140571号</a> | 京公网安备 11010802017721</p>
+                <p><a title="京ICP证140571号" target="_blank">京ICP证140571号</a> | 京公网安备 11010802017721</p>
             </div>
             <div class="edx_logo cf fr">
                 <a   target="_blank"><img src="static/images/edx_logo.262fca70a49b.png"  /></a>

@@ -43,7 +43,7 @@
 		<div class="wrap cf">
 			<div class="fl">
 				<h1 class="fl">
-					<a href="index.htm"  data-click="onClick" data-block="GLOBLNAV" data-element="1">
+					<a href="{{ URL('/') }}"  data-click="onClick" data-block="GLOBLNAV" data-element="1">
 					<img src="xuetang.png" title="学堂在线" />
 					</a>
 				</h1>
@@ -58,13 +58,13 @@
 					</ul>
             </div>
 			<div class="fr header_container cf">
-				<form class="header_container_search fl cf" id="header_search" method="get" action="https://www.xuetangx.com/courses/search" data-block="GLOBLNAV" data-description="TOSEARCH">
+				<form class="header_container_search fl cf" id="header_search" method="get"  data-block="GLOBLNAV" data-description="TOSEARCH">
 					<input class="fl" type="search" name="query" placeholder="课程、老师、学校" autocomplete="off">
                     <button class="header_container_submit fl"></button>
                     <div class="search_header_suggestion" style="display: none;"></div>
 				</form>
 				<div id="header_login_register" class="fl cf">
-					<img class="ajax_loading" src="static/images/alert/loading.06c954eb64c3.gif"  />
+					<img class="ajax_loading" src=""  />
 				</div>
             </div>
 		</div>
@@ -87,10 +87,10 @@
 
 
 
-    <script id="requirejs" src="static/js/lib/require.2d213b58c463.js"  ></script>
-    <script src="static/xuetangx/js/appCommon.2ee048cac1c3.js"  ></script>
-     <script src="static/js/appSrc/index.1644602d699c.js" ></script>
-    <script src="static/js/appSrc/analyticshost.20a224755bf9.js"  ></script>
+    <script id="requirejs" src="{{ URL::asset('static/js/lib/require.2d213b58c463.js') }}"  ></script>
+    <script src="{{ URL::asset('static/xuetangx/js/appCommon.2ee048cac1c3.js') }}"  ></script>
+     <script src="{{ URL::asset('static/js/appSrc/index.1644602d699c.js') }}" ></script>
+    <script src="{{ URL::asset('static/js/appSrc/analyticshost.20a224755bf9.js') }}"  ></script>
     <script>
       (function(){
         var bp = document.createElement('script');
