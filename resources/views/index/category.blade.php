@@ -1,101 +1,6 @@
+@extends("index.mooc")
+@section("content")
 
-
-<!DOCTYPE html>
-<html lang="en" xmlns:wb="http://open.weibo.com/wb">
-<head>
-	<meta charset=utf-8"utf-8">
-	<meta name="google-site-verification" content="e8WA0xc4_f57hKZBCIhOBrVMQhWVTgCLDry1AY_Ga-w" />
-	<meta name="keywords" content="学堂在线, MOOC, 慕课, XuetangX, 清华大学, 北京大学, 在线教育, 大规模开放式在线课程, 在线学习," />
-	<meta name="description" content="学堂在线是免费公开的MOOC（大规模开放在线课程）平台，是国家教育部MOOC研究中心官方合作平台，致力于通过来自国内外一流名校开设的免费网络学习课程，为公众提供系统的高等教育，让每一个中国人都有机会享受优质教育资源。通过和清华大学在线教育研究中心、以及国内外知名大学的紧密合作，学堂在线将不断增加课程的种类和丰富程度。" />
-	<meta name="renderer" content="webkit"/>
-    <meta property="qc:admins" content="27433770036055416706375" />
-    <meta name="apple-itunes-app" content="app-id=911639256, app-argument=https://itunes.apple.com/cn/app/xue-tang-zai-xian-guan-fang/id911639256?mt=8">
-    <meta http-equiv="X-UA-Compatible" content="edge" />
-
-	
-        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    
-
-	
-	<title>学堂在线-最大的中文慕课(MOOC)平台</title>
-	
-
-	<link rel="icon" type="image/x-icon" href="/static/images/favicon.a3220c63183d.ico" />
-	<link rel="stylesheet" type="text/css" href="../static/xuetangx/reset.a5f0fbe62f3b-1.css"  >
-	
-    <link rel="stylesheet" type="text/css" href="../static/xuetangx/forumproject.381f0489b532.css"  >
-    <link rel="stylesheet" type="text/css" href="../static/css/media.14fe4c3798ee-1.css"  >
-
-	
-
-	<!--[if lt IE 9]>
-	<script type="text/javascript" src="../static/js/html5shiv.0ce8f355891c-1.js"  ></script>
-	<![endif]-->
-</head>
-
-<body class=" lang_en">
-	
-        
-
-
-
-
-
-
-<header
-		class="header_index header_not_index"
-	id="header_bootstrap">
-
-	<div id="py_header_data" class="hide"
-	data-ajax="/header_ajax"
-	data-blurajax="/check_register_params_v2"
-	data-loginsubmit="/v2/login_ajax"
-	data-registersubmit="/unify_create_account"
-    data-phonecode="/phone/validate"
-    data-server-time="2016-09-28 02:23:39Z"
-	data-code=""
-	></div>
-
-	<div class="header_container" id="header_container">
-		<div class="wrap cf">
-			<div class="fl">
-				<h1 class="fl">
-					<a href="../index-1.htm"   data-click="onClick" data-block="GLOBLNAV" data-element="1">
-					<img src="" title="学堂在线" />
-					</a>
-				</h1>
-				<ul class="cf fl header_container_nav">
-					<li
-					><a href="../courses-1.htm"   title="课程" data-click="onClick" data-block="GLOBLNAV" data-element="2">课程</a></li>
-					<li
-					><a href="../partners-1.htm"   title="院校" data-click="onClick" data-block="GLOBLNAV" data-element="3">院校</a></li>
-	                <li
-						class="on"
-					><a href="index-1.htm"   title="广场" data-click="onClick" data-block="GLOBLNAV" data-element="4">广场</a></li>
-	                  <li
-	                  ><a href="../cloud-1.htm"   title="学堂云" data-click="onClick" data-block="GLOBLNAV" data-element="5">学堂云</a></li>
-	                  <li
-	                  ><a    title="雨课堂" data-click="onClick" data-block="GLOBLNAV" data-element="6">雨课堂</a></li>
-	                  <li
-	                  ><a href="../mobile-1.htm"   title="App下载" data-click="onClick" data-block="GLOBLNAV" data-element="7">App下载</a></li>
-				</ul>
-            </div>
-			<div class="fr header_container cf">
-				<form class="header_container_search fl cf" id="header_search" method="get" action="http://www.xuetangx.com/courses/search" data-block="GLOBLNAV" data-description="TOSEARCH">
-					<input class="fl" type="search" name="query" placeholder="课程、老师、学校" autocomplete="off">
-                    <button class="header_container_submit fl"></button>
-                    <div class="search_header_suggestion" style="display: none;"></div>
-				</form>
-				<div id="header_login_register" class="fl cf">
-					<img class="ajax_loading" src="../static/images/alert/loading.06c954eb64c3-1.gif"   />
-				</div>
-            </div>
-		</div>
-	</div>
-</header>
-
-	
-    
     <div class="g-mobile-nav" id="g-mobile-nav-js">
         <div id="g-mobile-nav">
           <ul>
@@ -130,9 +35,9 @@
         })();
     </script>
 
-    
 
-	
+
+
 
 
 
@@ -149,44 +54,44 @@
             </div>
             <nav class="container-fluid" id="post_navibar">
                 <ul class="row" id="entrance">
-                     
-                        
 
-                        
+
+
+
                             <li class="col-sm-2 current"><a class="entrance_activity" data-click="onClick" data-block="CATAGORY" data-element="1"
         href="category/activity.htm"  >活动
                             </a>
                             </li>
 
-                        
 
-                        
+
+
                             <li class="col-sm-2"><a class="entrance_course" data-click="onClick" data-block="CATAGORY" data-element="2"
-                                                    href="category/course.htm"  
+                                                    href="category/course.htm"
                                                      >分享</a>
                             </li>
 
-                        
 
-                        
+
+
                             <li class="col-sm-2"><a class="entrance_note" data-click="onClick" data-block="CATAGORY" data-element="3"
-                                                    href="category/note.htm"  
+                                                    href="category/note.htm"
                                                      >笔记</a>
                             </li>
 
-                        
 
-                        
+
+
                             <li class="col-sm-2"><a class="entrance_news" data-click="onClick" data-block="CATAGORY" data-element="4"
-                                                    href="category/news.htm"  
+                                                    href="category/news.htm"
                                                      >资讯</a>
                             </li>
 
-                        
 
-                        
+
+
                             <li class="col-sm-2"><a class="entrance_gossip" data-click="onClick" data-block="CATAGORY" data-element="5"
-                                                    href="category/gossip.htm"  
+                                                    href="category/gossip.htm"
                                                      >灌水</a>
                             </li>
 
@@ -194,8 +99,8 @@
                 </ul>
             </nav>
             <div class="post_body">
-                
-                    
+
+
                     <div class="pother post_body_classifyactivity">
                         <div class="pb_position b classifyactivity">
                             <a data-click="onClick" data-block="LIST" data-element="1" class="ptitle" href="post/2803.htm"   target="_blank">
@@ -220,7 +125,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="pother post_body_classifyactivity">
                         <div class="pb_position b classifyactivity">
                             <a data-click="onClick" data-block="LIST" data-element="2" class="ptitle" href="post/2423.htm"   target="_blank">
@@ -245,7 +150,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="pother post_body_classifyactivity">
                         <div class="pb_position b classifyactivity">
                             <a data-click="onClick" data-block="LIST" data-element="3" class="ptitle" href=""   target="_blank">
@@ -271,7 +176,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="pother post_body_classifyactivity">
                         <div class="pb_position b classifyactivity">
                             <a data-click="onClick" data-block="LIST" data-element="4" class="ptitle" href="post/1376-1.htm"   target="_blank">
@@ -297,7 +202,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="pother post_body_classifyactivity">
                         <div class="pb_position b classifyactivity">
                             <a data-click="onClick" data-block="LIST" data-element="5" class="ptitle" href="post/156.htm"   target="_blank">
@@ -323,7 +228,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="pother post_body_classifyactivity">
                         <div class="pb_position b classifyactivity">
                             <a data-click="onClick" data-block="LIST" data-element="6" class="ptitle" href="post/82.htm"   target="_blank">
@@ -348,7 +253,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="pother post_body_classifyactivity">
                         <div class="pb_position b classifyactivity">
                             <a data-click="onClick" data-block="LIST" data-element="7" class="ptitle" href="post/2786.htm"   target="_blank">
@@ -375,7 +280,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="pother post_body_classifyactivity">
                         <div class="pb_position b classifyactivity">
                             <a data-click="onClick" data-block="LIST" data-element="8" class="ptitle" href="post/2785-1.htm"   target="_blank">
@@ -402,7 +307,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="pother post_body_classifyactivity">
                         <div class="pb_position b classifyactivity">
                             <a data-click="onClick" data-block="LIST" data-element="9" class="ptitle" href=""   target="_blank">
@@ -427,7 +332,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="pother post_body_classifyactivity">
                         <div class="pb_position b classifyactivity">
                             <a data-click="onClick" data-block="LIST" data-element="10" class="ptitle" href=""   target="_blank">
@@ -496,12 +401,12 @@
     </div>
     <div class="recommend" id="asideFixedtwo">
         <h1>推荐活动</h1>
-        
-            
+
+
             <div class="forum_recommend_position">
                 <a href="post/2423.htm"   data-click="onClick" data-block="RECOMMENDACTIVITY#ACTIVITY" data-element="1" target="_blank"><img src="../../storage.xuetangx.com/public_assets/xuetangx/zizhukec307 172.png"  /></a>
             </div>
-            
+
             <div class="forum_recommend_position">
                 <a href="post/866.htm"   data-click="onClick" data-block="RECOMMENDACTIVITY#ACTIVITY" data-element="2" target="_blank"><img src="../../storage.xuetangx.com/public_assets/xuetangx/365 172 wishes.jpg"  /></a>
             </div>
@@ -513,46 +418,4 @@
 </div>
 
 <div class="hide" id="js_yxs_forumcollect"></div>
-
-
-
-
-	
-        
-
-
-
-
-<footer id="footer_bootstrap">
-    <div class="copyright wrap">
-        <div class="cf">
-            <div class="text fl">
-                <p>Copyright  2013-2016 北京慕华信息科技有限公司</p>
-                <p><a    title="京ICP证140571号" target="_blank">京ICP证140571号</a> | 京公网安备 11010802017721</p>
-            </div>
-            <div class="edx_logo cf fr">
-                <a    target="_blank"><img src="../static/images/edx_logo.262fca70a49b.png"  /></a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-	
-
-    <script id="requirejs" src="../static/js/lib/require.2d213b58c463-1.js"   ></script>
-    <script src="../static/xuetangx/js/appCommon.2ee048cac1c3-1.js"   ></script>
-    
-    
-    <script src="../static/xuetangx/js/forumproject.2b2187422a79.js"  ></script>
-
-    <script src="../static/js/appSrc/analyticshost.20a224755bf9-1.js"   ></script>
-    <script>
-      (function(){
-        var bp = document.createElement('script');
-        bp.src = '../../push.zhanzhang.baidu.com/push-1.js'/*tpa=http://push.zhanzhang.baidu.com/push.js*/;
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-      })();
-    </script>
-</body>
-</html>
+@endsection
