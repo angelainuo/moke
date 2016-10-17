@@ -1,0 +1,1 @@
+<?php  const img="'public/img/14764314474583.png";const title='mooc';const descript='hello world';const swit='开';

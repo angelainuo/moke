@@ -121,5 +121,5 @@
     </div>
 </div>
 </div>
-<div class="hide" id="js_yxs_forumedit"></div>
+<div class="hide" id="js_yxs_forumedit"></div>  
 @endsection
