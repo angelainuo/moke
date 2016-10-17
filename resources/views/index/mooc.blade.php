@@ -21,6 +21,36 @@
 	<link rel="icon" type="image/x-icon" href="/static/images/favicon.a3220c63183d.ico" />
 	<link href="{{ URL::asset('css/reset.a5f0fbe62f3b.css') }}" rel="stylesheet" type="text/css"/>
 	<link href="{{ URL::asset('css/index.c598dddc2602.css') }}" rel="stylesheet" type="text/css"/>
+	<link href="{{ URL::asset('css/forumproject.381f0489b532.css') }}" rel="stylesheet" type="text/css"/>
+	<style>
+		.top_inner, .top {
+			background: #f6f3f3;
+			position: relative;
+		}
+		.ewm {
+			position: absolute;
+			bottom: 140px;
+			right: 163px;
+		}
+		.ewm p {
+			text-align: center;
+			color: #999;
+			margin-top: 5px;
+			font-size: 14px;
+		}
+		.download_link {
+			position: absolute;
+			bottom: 54px;
+			right: 64px;
+			font-size: 14px;
+		}
+		.download_link a {
+			padding: 0 .5em;
+		}
+		.download_link a:hover {
+			color: #8040ff;
+		}
+	</style>
 
 </head>
 
@@ -89,8 +119,12 @@
 
     <script id="requirejs" src="{{ URL::asset('static/js/lib/require.2d213b58c463.js') }}"  ></script>
     <script src="{{ URL::asset('static/xuetangx/js/appCommon.2ee048cac1c3.js') }}"  ></script>
-     <script src="{{ URL::asset('static/js/appSrc/index.1644602d699c.js') }}" ></script>
+    <script src="{{ URL::asset('static/js/appSrc/index.1644602d699c.js') }}" ></script>
     <script src="{{ URL::asset('static/js/appSrc/analyticshost.20a224755bf9.js') }}"  ></script>
+		<script src="{{ URL::asset('static/js/forumproject.2b2187422a79.js') }}"  ></script>
+		<script src="{{ URL::asset('static/js/ueditor.all.min.3f392eb32a88.js') }}"  ></script>
+		<script src="{{ URL::asset('static/js/ueditor.config.cd70a5f5226d.js') }}"  ></script>
+
     <script>
       (function(){
         var bp = document.createElement('script');

@@ -19,7 +19,7 @@ Route::get('/courses','ClassController@index');
 Route::get('/partners','ColageController@index');
 
 Route::get('/community', function () {
-    return view('index.fragment');
+    return view('index.community');
 });
 Route::get('/cloud', function () {
     return view('index.cloud');
@@ -29,4 +29,10 @@ Route::get('/5', function () {
 });
 Route::get('/mobile', function () {
     return view('index.mobile');
+});
+Route::get('/content', function () {
+    return view('index.content');
+});
+Route::get('/add', function () {
+    return view('index.add');
 });

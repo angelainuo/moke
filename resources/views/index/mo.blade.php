@@ -105,7 +105,7 @@
 @yield("content")
 <footer id="footer_bootstrap">
     <div class="copyright wrap">
-        <div class="cf">
+        <div class="cf">              
             <div class="text fl">
                 <p>Copyright  2013-2016 北京慕华信息科技有限公司</p>
                 <p><a title="京ICP证140571号" target="_blank">京ICP证140571号</a> | 京公网安备 11010802017721</p>
