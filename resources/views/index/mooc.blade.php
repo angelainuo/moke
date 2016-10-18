@@ -7,7 +7,7 @@
 	<meta name="description" content="学堂在线是免费公开的MOOC（大规模开放在线课程）平台，是国家教育部MOOC研究中心官方合作平台，致力于通过来自国内外一流名校开设的免费网络学习课程，为公众提供系统的高等教育，让每一个中国人都有机会享受优质教育资源。通过和清华大学在线教育研究中心、以及国内外知名大学的紧密合作，学堂在线将不断增加课程的种类和丰富程度。" />
 	<meta name="renderer" content="webkit"/>
     <meta property="qc:admins" content="27433770036055416706375" />
-    <meta name="apple-itunes-app" content="app-id=911639256, app-argument=https://itunes.apple.com/cn/app/xue-tang-zai-xian-guan-fang/id911639256?mt=8">
+    <meta name="apple-itunes-app" content="app-id=911639256">
     <meta http-equiv="X-UA-Compatible" content="edge" />
 
 
@@ -22,6 +22,9 @@
 	<link href="{{ URL::asset('css/reset.a5f0fbe62f3b.css') }}" rel="stylesheet" type="text/css"/>
 	<link href="{{ URL::asset('css/index.c598dddc2602.css') }}" rel="stylesheet" type="text/css"/>
 	<link href="{{ URL::asset('css/forumproject.381f0489b532.css') }}" rel="stylesheet" type="text/css"/>
+	<link href="{{ URL::asset('css/courseabout.58dd313e99a6.css') }}" rel="stylesheet" type="text/css"/>
+	<link href="{{ URL::asset('css/index.aadc42de2b12.css') }}" rel="stylesheet" type="text/css"/>
+
 	<style>
 		.top_inner, .top {
 			background: #f6f3f3;
@@ -74,7 +77,7 @@
 			<div class="fl">
 				<h1 class="fl">
 					<a href="{{ URL('/') }}"  data-click="onClick" data-block="GLOBLNAV" data-element="1">
-					<img src="xuetang.png" title="学堂在线" />
+					<img src="{{ URL::asset('xuetang.png') }}" title="学堂在线" />
 					</a>
 				</h1>
 				<ul class="cf fl header_container_nav">
@@ -94,7 +97,7 @@
                     <div class="search_header_suggestion" style="display: none;"></div>
 				</form>
 				<div id="header_login_register" class="fl cf">
-					<img class="ajax_loading" src=""  />
+					
 				</div>
             </div>
 		</div>
@@ -124,6 +127,9 @@
 		<script src="{{ URL::asset('static/js/forumproject.2b2187422a79.js') }}"  ></script>
 		<script src="{{ URL::asset('static/js/ueditor.all.min.3f392eb32a88.js') }}"  ></script>
 		<script src="{{ URL::asset('static/js/ueditor.config.cd70a5f5226d.js') }}"  ></script>
+		<script src="{{ URL::asset('js/courseabout.5caa91378d71.js') }}"  ></script>
+		<script src="{{ URL::asset('js/hm.js') }}"  ></script>
+		<script src="{{ URL::asset('js/push.js') }}"  ></script>
 
     <script>
       (function(){

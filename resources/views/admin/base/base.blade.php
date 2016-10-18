@@ -33,7 +33,7 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    
+
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -283,7 +283,7 @@
                 </ul>
               </li>
               <!-- Control Sidebar Toggle Button -->
-             
+
             </ul>
           </div>
         </nav>
@@ -321,10 +321,10 @@
               </a>
               <ul class="treeview-menu">
                 <li class="active"><a href="{{ URL('admin/stu') }}"><i class="fa fa-circle-o"></i> 学生管理</a></li>
-                <li><a href="{{ URL('admin/teach') }}"><i class="fa fa-circle-o"></i> 
+                <li><a href="{{ URL('admin/teach') }}"><i class="fa fa-circle-o"></i>
 
                  老师管理</a></li>
-                  <li><a href="{{ URL('admin/admin') }}"><i class="fa fa-circle-o"></i> 
+                  <li><a href="{{ URL('admin/admin') }}"><i class="fa fa-circle-o"></i>
 
                  权限管理</a></li>
               </ul>
@@ -333,14 +333,14 @@
               <a href="#">
                 <i class="fa fa-files-o"></i>
                 <span>分类管理</span>
-               
+
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ URL('admin/type') }}"><i class="fa fa-circle-o"></i> 类别信息</a></li>
-                
+
               </ul>
             </li>
-           
+
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-pie-chart"></i>
@@ -350,7 +350,7 @@
               <ul class="treeview-menu">
                 <li><a href="{{ URL('admin/class') }}"><i class="fa fa-circle-o"></i> 查看所有课程</li>
                 <li><a href="{{ URL('admin/school') }}"><i class="fa fa-circle-o"></i> 学校列表</a></li>
-                
+
               </ul>
             </li>
             <li class="treeview">
@@ -362,7 +362,7 @@
               <ul class="treeview-menu">
                 <li><a href="{{ URL('admin/wmovie') }}"><i class="fa fa-circle-o"></i> 查看所有视频</a></li>
                 <li><a href="{{ URL('admin/movie') }}"><i class="fa fa-circle-o"></i> 用户视频列表</a></li>
-                
+
               </ul>
             </li>
             <li class="treeview">
@@ -373,7 +373,7 @@
               <ul class="treeview-menu">
                 <li><a href="{{ URL('admin/suggest') }}"><i class="fa fa-circle-o"></i> 帖子列表</a></li>
                 <li><a href="{{ URL('admin/talk') }}"><i class="fa fa-circle-o"></i> 帖子回复</a></li>
-               
+
               </ul>
             </li>
             <li class="treeview">
@@ -389,16 +389,16 @@
             <li>
               <a href="{{ URL('admin/config') }}">
                 <i class="fa fa-calendar"></i> <span>网站管理</span>
-               
+
               </a>
             </li>
             <li>
               <a href="{{ URL('admin/logout') }}">
                 <i class="fa fa-envelope"></i> <span>退出后台</span>
-               
+
               </a>
             </li>
-           
+
           </ul>
         </section>
         <!-- /.sidebar -->
@@ -619,7 +619,7 @@
     <script src="{{ asset('admins/plugins/fastclick/fastclick.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('admins/dist/js/app.min.js') }}"></script>
-    <!-- AdminLTE 
+    <!-- AdminLTE
 	 demo (This is only for demo purposes) -->
     <script src="{{ asset('admins/dist/js/pages/dashboard.js') }}"></script>
     <!-- AdminLTE for demo purposes -->

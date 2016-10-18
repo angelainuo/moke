@@ -37,7 +37,7 @@
                         <span><img src="school_card/tsh.cefcd8351cee.png"  alt="清华大学慕课" title="清华大学慕课" /></span>
 					</div>
 					<div class="text_con">
-                        <h3>{{ $collage->name }}</h3>
+                        <h3>{{ $collage->cname }}</h3>
                         <p>196门课程</p>
 						<p><span>立刻学习</span></p>
 					</div>
@@ -60,7 +60,7 @@
                         <span><img src="school_card/tsinghua.df743d72ba6e.png"  alt="清华大学慕课" title="清华大学慕课" /></span>
 					</div>
 					<div class="text_con">
-                        <h3>{{ $collage->name }}</h3>
+                        <h3>{{ $collage->cname }}</h3>
                         <p>196门课程</p>
 						<p><span>立刻学习</span></p>
 					</div>

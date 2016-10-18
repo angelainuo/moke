@@ -29,46 +29,37 @@
 						<tbody>
 						   <tr>
 							<td>
-								<input type="hidden" name="id" value="{{ $data[0]->id }}">
+
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								<div class="form-group">
 										<label for="inputEmail3" class="col-sm-1 control-label">大类名称</label>
 										<div class="col-sm-5">
-											<input type="text" class="form-control" id="inputEmail3" value="{{ $data[0]->tname }}" name="tname" disabled>
+                      <input type="hidden" name="id" value="{{ $data[0]->id }}">
+											<input type="text" class="form-control" id="inputEmail3" value="{{ $data[0]->tname }}" name="tname" >
 										</div>
 									</div>
-									
+
 							</td>
 							</tr>
-							<tr>
-								<td>
-								   <div class="form-group">
-										<label for="inputEmail3" class="col-sm-1 control-label">介绍</label>
-										<div class="col-sm-5">
-											<textarea class="form-control" rows="3" placeholder="请输入大类详情" name="detail">{{ $data[0]->detail }}</textarea>
-										</div>
-									</div>
-								   
-								</td>
-							</tr>
+
 							<tr>
 								<td>
 									<div class="box-footer">
 										<button type="submit" class="btn btn-default btn-info" style="position:absolute;left:230px">保存</button>
 										<button type="submit" class="btn btn-default btn-info"  style="position:absolute;left:350px" >重置</button>
-									</div>	
+									</div>
 
 								</td>
 						   </tr>
-						  
+
 						</tbody>
-                   
+
 					</form>
                   </table>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
 
-              
+
             </div><!-- /.col -->
           </div><!-- /.row -->
         </section><!-- /.content -->

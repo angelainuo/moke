@@ -28,7 +28,7 @@
                     <thead>
                       <tr>
                         <th>大类名称</th>
-                        <th>小类管理</th>
+
                         <th>操作</th>
                       </tr>
                     </thead>
@@ -36,25 +36,22 @@
                       @foreach($data as $v)
                       <tr>
                         <td>{{ $v->tname }}</td>
-                       
                         </td>
-                        <td> <a href='{{ URL("admin/stype/$v->id") }}'><button class="btn btn-xs btn-info">管理小类</button></a></td>
                         <td>
-                          <a href='{{ URL("admin/atype") }}'><button class="btn btn-xs btn-info">添加大类</button></a>
                           <a href='{{ URL("admin/utype/$v->id") }}'><button class="btn btn-xs btn-info">修改</button></a>
-                          <a href='{{ URL("admin/dType/$v->id") }}'><button class="btn btn-xs btn-danger">删除</button></a>                          
+                          <a href='{{ URL("admin/dType/$v->id") }}'><button class="btn btn-xs btn-danger">删除</button></a>
                         </td>
                       </tr>
                       @endforeach
                     </tbody>
                     <tfoot>
-                      
+
                     </tfoot>
                   </table>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
 
-              
+
             </div><!-- /.col -->
           </div><!-- /.row -->
         </section><!-- /.content -->

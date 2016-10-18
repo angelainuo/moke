@@ -11,10 +11,42 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/admin', function () {
     return view('admin.index.index');
 });
 
+
+Route::get('/','ClassController@shouye');
+Route::get('/courses','ClassController@index');
+
+Route::get('/course/{tid}','ClassController@type');
+Route::get('/course/{cid}','ClassController@collage');
+
+Route::get('/partners','ColageController@index');
+
+Route::get('/community','ClassController@community');
+
+Route::get('/cloud', function () {
+    return view('index.cloud');
+});
+Route::get('/5', function () {
+    return view('index.default');
+});
+Route::get('/mobile', function () {
+    return view('index.mobile');
+});
+Route::get('/content', function () {
+    return view('index.content');
+});
+Route::get('/add', function () {
+    return view('index.add');
+});
+Route::get('/class/{id}','ColageController@cla');
+
+Route::post('/4','ResgController@res');
+
+Route::post('/','LoginController@dologin');
+Route::get('/','LogoutController@logout');
 
 //访问base
 // Route::get("/admin",function() {
@@ -84,7 +116,7 @@ Route::group(['prefix'=>'admin','middleware'=>'loginCheck'],function(){
 		return view('admin.suggest.suggest');
 	});
 
-	
+
 	//公告管理
 	Route::get('tell/{ob?}','Admin\tellController@tell');
 

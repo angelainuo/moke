@@ -96,7 +96,7 @@ class classController extends Controller
                 $ext = $file->getClientOriginalExtension();
                 $filename = time().rand(1000,9999).'.'.$ext;
                 $path = "/img/";
-                $file->move($path,$filename);     
+                $file->move($path,$filename);
             }
         }
         if($request->input('cname')==''){
@@ -107,7 +107,7 @@ class classController extends Controller
 
     public function delClass($id)
     {
-        $data = \DB::table('class')->where('id',$id)->delete();
+        $data = \DB::table('class')->where('iid',$id)->delete();
         if($data)
         {
             return back();

@@ -10,7 +10,7 @@ use App\model\models;
 
 class typeController extends Controller
 {
-    
+
 	public function type()
 	{
 		$type = new models();
@@ -46,13 +46,14 @@ class typeController extends Controller
 	{
 		$type = new models();
 		$data = $type->ustype($id);
-		// dd($data);
+	// dd($data);
 		return view('admin.type.ustype')->with('data',$data);
 	}
 
 	public function updateStype(Request $request)
 	{
 		$type = new models();
+    dd($type);
 		$data = $type->updateStype($request);
 		if($data>0)
 		{
@@ -77,10 +78,13 @@ class typeController extends Controller
 		return view('admin.type.utype')->with('data',$data);
 	}
 
-	public function updateType(Request $request)
+	public function updateType(Request $request,$id)
 	{
-		$type = new models();
-		$data = $type->updateType($request);
+		$data = $request->only("tname","id");
+    \DB::table("type")->where("id",$id)->update($data);
+
+		// $data = \DB::update('update users set tname = $request where id');
+    dd($data);
 		if($data>0)
 		{
 			return view('admin.index.index');
