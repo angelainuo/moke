@@ -17,7 +17,8 @@ class ClassController extends Controller
     }
     public function community(){
       $list=\DB::table("tell")->get();
-      return view('index.community',['list'=>$list]);
+      $post=\DB::table("post")->get();
+      return view('index.community',['list'=>$list,'post'=>$post]);
     }
     public function type($tid){
       $list=\DB::select("select * from class,college,type where class.tid=$tid and class.tid=type.id and class.cid=college.id");
@@ -31,11 +32,6 @@ class ClassController extends Controller
       $college=\DB::table("college")->get();
     	return view('index.courses',['list'=>$list,'data'=>$data,'college'=>$college]);
     }
-    // public function shouye(){
-    //   $list=\DB::table('class')->get();
-    //   $content=\DB::table('post')->get();
-    //   $college=\DB::table('college')->();
-    //   return view('index.index',['list'=>$list,'content'=>$content,'college'=>$college]);
-    // }
+
 
 }

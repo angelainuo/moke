@@ -16,7 +16,7 @@ Route::get('/admin', function () {
 });
 
 
-Route::get('/','ClassController@shouye');
+Route::get('/','ColageController@shouye');
 Route::get('/courses','ClassController@index');
 
 Route::get('/course/{tid}','ClassController@type');
@@ -35,9 +35,8 @@ Route::get('/5', function () {
 Route::get('/mobile', function () {
     return view('index.mobile');
 });
-Route::get('/content', function () {
-    return view('index.content');
-});
+Route::get('/content/{id}','ColageController@post');
+
 Route::get('/add', function () {
     return view('index.add');
 });
@@ -45,8 +44,8 @@ Route::get('/class/{id}','ColageController@cla');
 
 Route::post('/4','ResgController@res');
 
-Route::post('/','LoginController@dologin');
-Route::get('/','LogoutController@logout');
+Route::post('/demo11','LoginController@dologin');
+Route::get('/demo12','LogoutController@logout');
 
 //访问base
 // Route::get("/admin",function() {

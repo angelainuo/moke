@@ -87,20 +87,23 @@
 	</div>
 	<div class="rec_courses_wrap wrap bg_hui">
 		<ul class="cf">
+			@foreach($list as $class)
 			<li>
-				<a href="courses/MITx/6_00_2x/2014_T2/about.htm"   title="计算思维和数据科学导论" target="_blank" data-block="RECOMMENDED#COURSE" data-element="1" data-click="onClick">
+				<a href='{{ URL::asset("class/$class->iid") }}'   title="{{ $class->className }}" target="_blank" data-block="RECOMMENDED#COURSE" data-element="1" data-click="onClick">
 					<div class="normal">
-						<img class="scrollLoading" data-url="/c4x/MITx/6_00_2x/asset/images_course_image.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="计算思维和数据科学导论" title="计算思维和数据科学导论" />
+						<img class="scrollLoading" src='{{ URL::asset("image/college/$class->image") }}'  alt="{{ $class->className }}" title="{{ $class->className }}" />
 						<div class="rec_cover">
 						</div>
 					</div>
-					<h3>计算思维和数据科学导论</h3>
+					<h3>{{ $class->className }}</h3>
             <div class="rec_courses_ref cf" data-enrollment-start="2015-06-07 16:00:00+00:00" data-enrollment-end="" data-start="2016-10-13 16:00:00+00:00" data-end="">
               <span class="rec_courses_time fl"></span>
-              <span class="rec_courses_num fr">12452人</span>
+              <!-- <span class="rec_courses_num fr">12452人</span> -->
             </div>
+
 				</a>
 			</li>
+			@endforeach
 		</ul>
 	</div>
 </div>
@@ -115,25 +118,27 @@
 	</div>
 	<div class="community_wrap">
 		<div class="community_left fl">
+			@foreach($post as $post)
 				<div class="community_position cf">
 					<div class="cheader_left fl">
 						<em>活动</em>
-						<a class="ctitle" href="community/post/2423-1.htm"   target="_blank" data-click="onClick" data-element="1" data-block="COMMUNITY"><p>【新学期の大福利】玩转自主模式 赢取学堂好礼</p></a>
+						<a class="ctitle" href='{{ URL("/content/$post->id") }}'   target="_blank" data-click="onClick" data-element="1" data-block="COMMUNITY"><p>{{ $post->title }}</p></a>
 					</div>
-					<p class="cheader_right fr cf"><span class="last_send_time fr">2016-08-30 04:45:50+00:00</span><span class="hotnum fr">120</span></p>
+					<p class="cheader_right fr cf"><span class="last_send_time fr">{{ $post->time }}</span><span class="hotnum fr">120</span></p>
 				</div>
+				@endforeach
 			<div class="community_viewall">
-				<a href="community/index.htm"   target="_blank" data-click="onClick" data-description="TOMORE" data-block="MORE"><em>查看全部帖子</em></a>
+				<a href="{{ URL('/community') }}"   target="_blank" data-click="onClick" data-description="TOMORE" data-block="MORE"><em>查看全部帖子</em></a>
 			</div>
 		</div>
 		<div class="community_right cf fl">
 			<ul class="fl">
 	            <li class="longleft mt0">
-                <a href="community/post/1936.htm"   title="" target="_blank">
+                <a href=""   title="" target="_blank">
 	                    <div class="normal">
-                        <img sec="" class="layer scrollLoading" alt="" title="" />
+                        <img src="http://storage.xuetangx.com/public_assets/xuetangx/bbs/cover/lvxingdeshouye.gif" class="layer scrollLoading" alt="" title="" />
 	                        <div class="cover">
-	                            <img src="" class="blur scrollLoading">
+	                            <img src="http://storage.xuetangx.com/public_assets/xuetangx/bbs/cover/lvxingdeshouye.gif" class="blur scrollLoading">
 	                            <div class="mask">
                                 <p>现阶段你最想去哪里旅行？</p>
 	                            </div>
@@ -142,11 +147,11 @@
 	                </a>
 	            </li>
 	            <li>
-                <a href="community/post/1272.htm"   title="" target="_blank">
+                <a href=""   title="" target="_blank">
 	                    <div class="normal">
-                        <img  src="" class="layer scrollLoading" alt="" title="" />
+                        <img  src="http://storage.xuetangx.com/public_assets/xuetangx/bbs/cover/zhuanyehaogandu.jpg" class="layer scrollLoading" alt="" title="" />
 	                        <div class="cover">
-	                            <img src="" class="blur scrollLoading">
+	                            <img src="http://storage.xuetangx.com/public_assets/xuetangx/bbs/cover/zhuanyehaogandu.jpg" class="blur scrollLoading">
 	                            <div class="mask">
                                 <p>你对哪个专业的人有着莫名好感？</p>
 	                            </div>
@@ -155,11 +160,11 @@
 	                </a>
 	            </li>
 	            <li class="">
-                <a href="community/post/1254.htm"   title="" target="_blank">
+                <a href=""   title="" target="_blank">
 	                    <div class="normal">
-                        <img src="" class="layer scrollLoading" alt="" title="" />
+                        <img src="http://storage.xuetangx.com/public_assets/xuetangx/bbs/cover/tucaode.jpg" class="layer scrollLoading" alt="" title="" />
 	                        <div class="cover">
-	                            <img src="" class="blur scrollLoading">
+	                            <img src="http://storage.xuetangx.com/public_assets/xuetangx/bbs/cover/tucaode.jpg" class="blur scrollLoading">
 	                            <div class="mask">
                                 <p>朋友圈里哪种秀最让你不爽？</p>
 	                            </div>
@@ -178,20 +183,22 @@
 	</div>
 	<div class="cooperation_wrap wrap bg_hui">
 		<div class="cooperation_left fl">
-      <a href="courses-org=29.htm"  " target="_blank">
-        <img src="../storage.xuetangx.com/public_assets/xuetangx/homepageparter/Tsinghua1.png"  ">
+      <a href="courses-org=29.htm"   target="_blank">
+        <img src="../storage.xuetangx.com/public_assets/xuetangx/homepageparter/Tsinghua1.png"  >
       </a>
 		</div>
 		<div class="cooperation_right cf fl">
 			<ul class="cf">
+				@foreach($data as $college)
 				<li>
-					<a  href="" title="edX国际MOOC平台" target="_blank">
+					<a  href='{{ URL("course/$college->id") }}' title="edX国际MOOC平台" target="_blank">
 						<div class="normal">
-							<img class="scrollLoading"  />
-							<h3>edX国际MOOC平台</h3>
+							<img class="scrollLoading" src='http://storage.xuetangx.com/public_assets/xuetangx/course_introduction/20160616142841944241' />
+							<h3>{{ $college->cname }}</h3>
 						</div>
 					</a>
 				</li>
+				@endforeach
 				<li>
 					<a href="partners.htm"   title="更多院校" target="_blank">
 						<div class="normal">
@@ -204,16 +211,5 @@
 		</div>
 	</div>
 </div>
-
-	<svg class="hidden" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-		<defs>
-			<filter id="blur">
-				<feGaussianBlur stdDeviation="5" />
-			</filter>
-		</defs>
-	</svg>
-	<div id="yxs_homepage" class="hide"></div>
-</div>
-
 
 @endsection

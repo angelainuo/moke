@@ -87,15 +87,15 @@
             </div>
             <div class="post_body">
 
-
+                @foreach($post as $post)
                     <div class="pb_position b classifyactivity">
                         <div class="pb_position_header cf">
                             <div class="pb_position_header_left fl">
                                 <em class="popular_tag"><span></span></em>
 
                                 <em>活动</em>
-                                <a target="_blank" class="ptitle" href="{{ URL('./content') }}"   data-click="onClick" data-block="LIST" data-element="1">
-                                    <p>【学堂暑期大学】夏日学霸大作战（结果已公布）</p>
+                                <a target="_blank" class="ptitle" href='{{ URL("/content/$post->id") }}' data-click="onClick" data-block="LIST" data-element="1">
+                                    <p>{{ $post->title }}</p>
                                 </a>
                             </div>
                             <p class="last_send_time fr">2016-07-01 11:42:49</p>
@@ -103,7 +103,7 @@
                         </div>
 
                         <div class="pcontentwrap">
-                            <p class="pcontent">——————————————【 最终结果 】————————————————————————不好意思让大家久等啦！终于到了激动人心发奖环节！恭喜以下获奖的小伙伴！【说明与须知】请以上获奖者于近期及时查</p>
+                            <p class="pcontent">{{ $post->content }}</p>
                         </div>
 
                         <div class="pref">
@@ -119,7 +119,7 @@
                             </div>
                         </div>
                     </div>
-
+                    @endforeach
 
             </div>
         </div>

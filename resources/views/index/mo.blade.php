@@ -147,7 +147,7 @@
 			function checkUname()
 			{
 				var nickName = document.myform.nickName.value;
-				if(nickName.match(/^\w{8,12}$/) == null){
+				if(nickName.match(/^\w{8,16}$/) == null){
 					alert('账号必须是8~12位有效字符');
 					return false;
 				}
@@ -253,10 +253,10 @@
 
 					</ul>
             </div>
-					</div><div>
+						<div></div>
 			<div class="fr header_container cf">
-
-				<div class=" common" style="position:absolute; left:100px">
+				<div></div>
+				<div class=" common" style="position:absolute; right:100px ;float:right;" >
 			    <div class="login fr">
 			      <div class="loginmenu"><a title="登录或注册"></a></div>
 			      <ul>
@@ -370,19 +370,7 @@
 	</div>
 </header>
 @yield("content")
-<footer id="footer_bootstrap">
-    <div class="copyright wrap">
-        <div class="cf">
-            <div class="text fl">
-                <p>Copyright  2013-2016 北京慕华信息科技有限公司</p>
-                <p><a title="京ICP证140571号" target="_blank">京ICP证140571号</a> | 京公网安备 11010802017721</p>
-            </div>
-            <div class="edx_logo cf fr">
-                <a   target="_blank"><img src="static/images/edx_logo.262fca70a49b.png"  /></a>
-            </div>
-        </div>
-    </div>
-</footer>
+
 		 <link href="{{ URL::asset('js/require.2d213b58c463.js') }}" rel="stylesheet" type="text/js"/>
 		 <link href="{{ URL::asset('js/appCommon.2ee048cac1c3.js') }}" rel="stylesheet" type="text/js"/>
 		 <link href="{{ URL::asset('js/homepage.ea28864f00b2.js') }}" rel="stylesheet" type="text/js"/>
