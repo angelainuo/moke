@@ -24,165 +24,248 @@
 	<script src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
 	<script language="javascript" src="{{ asset('script/jquery.easing.min.js') }}"></script>
 	<script language="javascript" src="{{ asset('script/custom.js') }}"></script>
-	<style>
+<style>
 
-	*{ padding:0; margin:0; list-style:none; border:0;}
+*{ padding:0; margin:0; list-style:none; border:0;}
 
-	.all{ width: 1000px; height: 500px; padding: 7px;  margin: 0 auto; position: relative; }
-	.screen{
-		width:1500px;
-		height:500px;
-		 overflow:hidden;
-		position:relative;
-	}
-	.screen li{ width:1000px; height:500px; overflow:hidden; float:left;}
-	.screen ul{ position:absolute; left:0; top:0px; }
-	.all ol{ position:absolute; right:10px; bottom:10px; line-height:20px; text-align:center;}
-	.all ol li{ float: left; width: 15px; height: 15px; background: #fff;  margin-left: 5px; cursor: pointer; font-size: 10px; font-family: Verdana; line-height: 15px; border-radius: 15px; }
-	.all ol li.current{ background:yellow;}
-	</style>
-	<script type="text/javascript">
-	    window.onload= function() {
-	        var box  = document.getElementById("all");  //   获得大盒子
-	        var ul = box.children[0].children[0];  // 获取ul
-	        var ulLis = ul.children;  //  ul 里面的所有  li
-	        // 复习：  cloneNode()     克隆节点       追加a.appendChild(b)  把b 放到a 的最后面
-	        //1.  ulLis[0].cloneNode(true)  克隆  节点
-	        ul.appendChild(ulLis[0].cloneNode(true));   // ul 是 a   ulLis[0].cloneNode(true) 是b
-
-	        //2. 插入 ol 里面的li
-	        var ol = box.children[1];  // 获得ol
-	        // 因为 我们要创建很多个 ol 里面的li 所以需要用到for 循环哦
-	        for(var i=0;i<ulLis.length-1;i++) {   // ul 里面的li  长度 要减去 1  因为我们克隆一个
-	            // 创建节点 li
-	            var li = document.createElement("li");
-	            li.innerHTML = i + 1;   //  存在加1 的关系
-	            // a.appendChild(b);
-	            ol.appendChild(li);
-	        }
-	        var olLis = ol.children;  // 找到 ol 里面的li
-	        olLis[0].className = 'current';
-	        // 3. 动画部分  遍历小li ol
-	        for(var i=0;i<olLis.length;i++) {
-	            olLis[i].index = i;  // 赋予索引号
-	            olLis[i].onmouseover = function() {
-	                // 清除所有人
-	                for(var j=0;j<olLis.length;j++) {
-	                    olLis[j].className = "";
-	                }
-	                this.className = 'current';
-	                animate(ul,-this.index*ulLis[0].offsetWidth);
-	                key = square = this.index; // 鼠标经过 key square 要等于 当前的索引号
-	            }
-	        }
-	       // 4. 定时器部分  难点
-	        var timer = null;  // 定时器
-	        var key = 0; // 用来控制图片的播放的
-	        var square = 0;  // 用来控制小方块的
-	        timer = setInterval(autoplay,3000);   // 每隔3s 调用一次 autoplay
-	        function autoplay() {
-	            key++;   // key == 1  先 ++
-	            console.log(key); //  不能超过5
-	            if(key > ulLis.length - 1)
-	            {
-	               // alert('停下');
-	                ul.style.left = 0;
-	                key = 1;  // 因为第6张就是第一张，我们已经播放完毕了， 下一次播放第2张
-	                // 第2张的索引号是1
-	            }
-	            animate(ul,-key*ulLis[0].offsetWidth);
-	            // 小方块的做法
-	            square++;  // 小方块自加1
-	            square = square>olLis.length-1 ? 0 : square;
-	            /// 清除所有人
-	            for(var i=0;i<olLis.length;i++) {
-	                olLis[i].className = "";
-	            }
-	            olLis[square].className = "current";   // 留下当前自己的
-
-	        }
+.all{ width: 1000px; height: 500px; padding: 7px;  margin: 0 auto; position: relative; }
+.screen{
+	width:1500px;
+	height:500px;
+	 overflow:hidden;
+	position:relative;
+}
+.screen li{ width:1000px; height:500px; overflow:hidden; float:left;}
+.screen ul{ position:absolute; left:0; top:0px; }
+.all ol{ position:absolute; right:10px; bottom:10px; line-height:20px; text-align:center;}
+.all ol li{ float: left; width: 15px; height: 15px; background: #fff;  margin-left: 5px; cursor: pointer; font-size: 10px; font-family: Verdana; line-height: 15px; border-radius: 15px; }
+.all ol li.current{ background:yellow;}
 
 
-	        // 鼠标经过和停止定时器
-	        box.onmouseover = function() {
-	            clearInterval(timer);
-	        }
+		body{
+			font:14px/28px "微软雅黑";
+		}
+		.contact *:focus{outline :none;}
+		.contact{
+			width:600px;
+			height: auto;
+			background: #f6f6f6;
+			margin: 0 auto;
 
-	        box.onmouseout = function() {
-	            timer = setInterval(autoplay,3000);  // 一定这么开
-	        }
+
+		}
+		.contact ul {
+			width: 650px;
+			margin: 0 auto;
+		}
+		.contact ul li{
+			border-bottom: 1px solid #dfdfdf;
+			list-style: none;
+			padding: 12px;
+		}
+		.contact ul li label {
+			width: 120px;
+			display: inline-block;
+			float: left;
+		}
+		.contact ul li input[type=text],.contact ul li input[type=password]{
+			width: 220px;
+			height: 25px;
+			border :1px solid #aaa;
+			padding: 3px 8px;
+			border-radius: 5px;
+		}
+		.contact ul li input:focus{
+			border-color: #c00;
+
+		}
+		.contact ul li input[type=text]{
+			transition: padding .25s;
+			-o-transition: padding  .25s;
+			-moz-transition: padding  .25s;
+			-webkit-transition: padding  .25s;
+		}
+		.contact ul li input[type=password]{
+			transition: padding  .25s;
+			-o-transition: padding  .25s;
+			-moz-transition: padding  .25s;
+			-webkit-transition: padding  .25s;
+		}
+		.contact ul li input:focus{
+			padding-right: 70px;
+		}
+		.btn{
+			position: relative;
+			left: 300px;
+		}
+		.tips{
+			color: rgba(0, 0, 0, 0.5);
+			padding-left: 10px;
+		}
+		.tips_true,.tips_false{
+			padding-left: 10px;
+		}
+		.tips_true{
+			color: green;
+		}
+		.tips_false{
+			color: red;
+		}
+</style>
+<script type="text/javascript">
+    window.onload= function() {
+        var box  = document.getElementById("all");  //   获得大盒子
+        var ul = box.children[0].children[0];  // 获取ul
+        var ulLis = ul.children;  //  ul 里面的所有  li
+        // 复习：  cloneNode()     克隆节点       追加a.appendChild(b)  把b 放到a 的最后面
+        //1.  ulLis[0].cloneNode(true)  克隆  节点
+        ul.appendChild(ulLis[0].cloneNode(true));   // ul 是 a   ulLis[0].cloneNode(true) 是b
+
+        //2. 插入 ol 里面的li
+        var ol = box.children[1];  // 获得ol
+        // 因为 我们要创建很多个 ol 里面的li 所以需要用到for 循环哦
+        for(var i=0;i<ulLis.length-1;i++) {   // ul 里面的li  长度 要减去 1  因为我们克隆一个
+            // 创建节点 li
+            var li = document.createElement("li");
+            li.innerHTML = i + 1;   //  存在加1 的关系
+            // a.appendChild(b);
+            ol.appendChild(li);
+        }
+        var olLis = ol.children;  // 找到 ol 里面的li
+        olLis[0].className = 'current';
+        // 3. 动画部分  遍历小li ol
+        for(var i=0;i<olLis.length;i++) {
+            olLis[i].index = i;  // 赋予索引号
+            olLis[i].onmouseover = function() {
+                // 清除所有人
+                for(var j=0;j<olLis.length;j++) {
+                    olLis[j].className = "";
+                }
+                this.className = 'current';
+                animate(ul,-this.index*ulLis[0].offsetWidth);
+                key = square = this.index; // 鼠标经过 key square 要等于 当前的索引号
+            }
+        }
+       // 4. 定时器部分  难点
+        var timer = null;  // 定时器
+        var key = 0; // 用来控制图片的播放的
+        var square = 0;  // 用来控制小方块的
+        timer = setInterval(autoplay,3000);   // 每隔3s 调用一次 autoplay
+        function autoplay() {
+            key++;   // key == 1  先 ++
+            console.log(key); //  不能超过5
+            if(key > ulLis.length - 1)
+            {
+               // alert('停下');
+                ul.style.left = 0;
+                key = 1;  // 因为第6张就是第一张，我们已经播放完毕了， 下一次播放第2张
+                // 第2张的索引号是1
+            }
+            animate(ul,-key*ulLis[0].offsetWidth);
+            // 小方块的做法
+            square++;  // 小方块自加1
+            square = square>olLis.length-1 ? 0 : square;
+            /// 清除所有人
+            for(var i=0;i<olLis.length;i++) {
+                olLis[i].className = "";
+            }
+            olLis[square].className = "current";   // 留下当前自己的
+
+        }
+
+
+        // 鼠标经过和停止定时器
+        box.onmouseover = function() {
+            clearInterval(timer);
+        }
+
+        box.onmouseout = function() {
+            timer = setInterval(autoplay,3000);  // 一定这么开
+        }
 
 
 
-	        //  基本封装
-	        function animate(obj,target) {
-	            clearInterval(obj.timer);  // 要开启定时器，先清除以前定时器
-	            // 有2个参数 第一个 对象谁做动画  第二 距离 到哪里
-	            // 如果 offsetLeft 大于了  target 目标位置就应该反方向
-	            var speed = obj.offsetLeft < target ? 15 : -15;
-	            obj.timer = setInterval(function() {
-	                var result = target - obj.offsetLeft;  //  他们的值 等于 0 说明完全相等
-	                // 动画的原理
-	                obj.style.left = obj.offsetLeft + speed  + "px";
-	                if(Math.abs(result) <= 15) {
-	                    obj.style.left = target + "px";   //抖动问题
-	                    clearInterval(obj.timer);
-	                }
-	            },10);
-	        }
+        //  基本封装
+        function animate(obj,target) {
+            clearInterval(obj.timer);  // 要开启定时器，先清除以前定时器
+            // 有2个参数 第一个 对象谁做动画  第二 距离 到哪里
+            // 如果 offsetLeft 大于了  target 目标位置就应该反方向
+            var speed = obj.offsetLeft < target ? 15 : -15;
+            obj.timer = setInterval(function() {
+                var result = target - obj.offsetLeft;  //  他们的值 等于 0 说明完全相等
+                // 动画的原理
+                obj.style.left = obj.offsetLeft + speed  + "px";
+                if(Math.abs(result) <= 15) {
+                    obj.style.left = target + "px";   //抖动问题
+                    clearInterval(obj.timer);
+                }
+            },10);
+        }
 
-	    }
-	</script>
+    }
+</script>
 
-	</head>
-	<script>
-
-			function clearName()
-			{
-				if(document.myform.nickName.value == '请输入用户名'){
-					document.myform.nickName.value = '';
-				}
-			}
-			//验证用户名
-			function checkUname()
-			{
-				var nickName = document.myform.nickName.value;
-				if(nickName.match(/^\w{8,16}$/) == null){
-					alert('账号必须是8~12位有效字符');
-					return false;
-				}
-				return true;
-			}
-
-			function checkPassword()
-			{
-				var password= document.myform.password.value;
-				if(password.match(/^\w{6,12}$/) == null){
-					alert('密码号必须是6~12位有效字符');
-					return false;
-				}
-				return true;
-			}
-			function checkEmail()
-			{
-				var email=document.myform.email.value;
-				if(email.match(/^\w+@\w+(\.\w+){1,2}$/)==null){
-					alert('邮箱必须包含@');
-					return false;
-				}
-				return true;
-
-			}
-			// /^\w+@\w+(\.\w+){1,2}$/
-			// 总的表单提交
-			function doSubmit()
-			{
-				//年龄和用户名都验证成功则可以提交
-				return checkUname()  && checkEmail() && checkPassword;
-			}
-
-	</script>
 </head>
+<script>
+	function checkna(){
+			na=form1.nickName.value;
+		  	if( na.length <1 || na.length >12)
+	  		{
+	  			divname.innerHTML='<font class="tips_false">长度是1~12个字符</font>';
+
+	  		}else{
+	  		    divname.innerHTML='<font class="tips_true">输入正确</font>';
+
+	  		}
+
+	  }
+	  //验证密码 
+		function checkpsd1(){    
+			psd1=form1.password.value;  
+			var flagZM=false ;
+			var flagSZ=false ; 
+			var flagQT=false ;
+			if(psd1.length<6 || psd1.length>12){   
+				divpassword1.innerHTML='<font class="tips_false">长度错误</font>';
+			}else
+				{   
+				  for(i=0;i < psd1.length;i++)   
+					{    
+						if((psd1.charAt(i) >= 'A' && psd1.charAt(i)<='Z') || (psd1.charAt(i)>='a' && psd1.charAt(i)<='z')) 
+						{   
+							flagZM=true;
+						}
+						else if(psd1.charAt(i)>='0' && psd1.charAt(i)<='9')    
+						{ 
+							flagSZ=true;
+						}else    
+						{ 
+							flagQT=true;
+						}   
+					}   
+					if(!flagZM||!flagSZ||flagQT){
+					divpassword1.innerHTML='<font class="tips_false">密码必须是字母数字的组合</font>'; 
+					 
+					}else{
+
+					divpassword1.innerHTML='<font class="tips_true">输入正确</font>';
+					 
+					}  
+				 
+				}
+		}
+		function checkmail(){
+					apos=form1.email.value.indexOf("@");
+					dotpos=form1.email.value.lastIndexOf(".");
+					if (apos<1||dotpos-apos<2)
+					  {
+					  	divmail.innerHTML='<font class="tips_false">输入错误</font>' ;
+					  }
+					else {
+						divmail.innerHTML='<font class="tips_true">输入正确</font>' ;
+					}
+		}
+</script>
 
 <body class=" lang_en">
 <header
@@ -253,26 +336,36 @@
 
 					</ul>
             </div>
-						<div></div>
 			<div class="fr header_container cf">
-				<div></div>
-				<div class=" common" style="position:absolute; right:100px ;float:right;" >
-			    <div class="login fr">
-			      <div class="loginmenu"><a title="登录或注册"></a></div>
-			      <ul>
-					@if(session('user'))
-					{{ session('user')->nickName }}
-					<a href="{{ URL('/') }}"><button style="background-color:blue">退出</a></button>
-					@else
-			        <li class="openlogin"><a href="http://www.jq22.com/" onclick="return false;">登录</a></li>
+				<form class="header_container_search fl cf" id="header_search" method="get"  data-block="GLOBLNAV" data-description="TOSEARCH">
+					<input class="fl" type="search" name="query" placeholder="课程、老师、学校" autocomplete="off">
+                    <button class="header_container_submit fl"></button>
+                    <div class="search_header_suggestion" style="display: none;"></div>
+				</form>
+				<div id="header_login_register" class="fl cf">
+					<div class=" common" style="position:absolute; left:100px">
+					    <div class="login fr">
+					      <div class="loginmenu"><a title="登录或注册"></a></div>
+					      <ul>
+									<div>
+									</div>
+							@if(session('user'))
+							<a href="{{ URL('/geren/') }}">{{ session('user')->nickName }}</a>
+							<a href="{{ URL('/demo12') }}"><button style="background-color:blue">退出</a></button>
+							@else
+					        <li class="openlogin"><a href="http://www.jq22.com/" onclick="return false;">登录</a></li>
 
-			        <li class="reg"><a href="" onclick="return false;">注册</a></li>
+					        <li class="reg"><a href="" onclick="return false;">注册</a></li>
 
-					@endif
-			      </ul>
-			    </div>
-			    <div class="clear"></div>
-			  </div>
+							@endif
+					      </ul>
+					    </div>
+					    <div class="clear"></div>
+					  </div>
+				</div>
+            </div>
+
+
 			</div>
 			<div class="clear"></div>
 			<div class="loginmask"></div>
@@ -319,41 +412,38 @@
 
 			    </div>
 			  </div>
-			  <div class="thirdlogin">
-			    <div class="pd50">
-			      <h4>用第三方帐号直接登录</h4>
-			      <ul>
-			        <li id="sinal"><a href="http://www.jq22.com/">微博账号登录</a></li>
-			        <li id="qql"><a href="http://www.jq22.com/">QQ账号登录</a></li>
-			        <div class="clear"></div>
-			      </ul>
-			      <div class="clear"></div>
-			    </div>
-			  </div>
+
 			</div>
 			<div id="reg_setp" style="background-color:#EBCFBE">
 			  <div class="back_setp">返回</div>
 			  <div class="blogo"></div>
 			  <div id="setp_quicklogin">
 			    <div id="cd-signup"> <!-- 注册表单 -->
-				<form name='myform' action="{{ URL('/4') }}" method='post' onsubmit='return doSubmit()'>
+
+				<form name='form1' action="{{ URL('/4') }}" method='post' >
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
-					<div class="one">
-					<label for="username">用户名：</label>
-					<input  type='text' name='nickName' value='请输入用户名' onfocus='clearName()' onblur='checkUname()'/>
-					</div>
-					<div class="one">
-					<label for="username">密码：</label>
-					<input  type='password' name='password'   onblur='checkPassword()'/>
-					</div>
-					<div class="one">
-					<label for="email">邮箱：</label>
-					<input type='text' name='email' onblur='checkEmail' />
-					</div>
+					<div align="center">
+										<div class="contact" >
+					<ul>
+						<li>
+							<label>姓名：</label>
+							<input type="text" name="nickName" placeholder="长度1~12个字符"  onblur="checkna()" required/><span class="tips" id="divname"></span>
+						</li>
+						<li>
+							<label>密码：</label>
+							<input type="password" name="password" placeholder="请输入你的密码" onblur="checkpsd1()" required/><span class="tips" id="divpassword1"></span>
+						</li>
 
-					<input type="submit" id="send" value="提交"/>
-					<input type="reset" id="res" value="重置" />
+						<li>
+							<label>电子邮箱：</label>
+							<input type="text" name="email" placeholder="请输入你的邮箱" onblur="checkmail()" required/><span class="tips" id="divmail"></span>
+						</li>
+						<li>
 
+			<input type="submit" value="提交"/>
+			<input type="reset" value="取消"/>
+						</li>
+						</ul>
 
 					<p class="fieldset">
 						<input type="checkbox" id="accept-terms">
@@ -363,14 +453,45 @@
 
 				</form>
 			</div>
+					</div>
+
 			  </div>
 			</div>
-      </div>
+
+
+	<script type="text/javascript">
+		$(function () {
+        $('input').iCheck({
+          checkboxClass: 'icheckbox_square-blue',
+          radioClass: 'iradio_square-blue',
+          increaseArea: '20%' // optional
+        });
+      });
+	</script>
+
+
+
+		</div>
+	</div>
 		</div>
 	</div>
 </header>
-@yield("content")
 
+
+@yield("content")
+<footer id="footer_bootstrap">
+    <div class="copyright wrap">
+        <div class="cf">
+            <div class="text fl">
+                <p>Copyright  2013-2016 北京慕华信息科技有限公司</p>
+                <p><a title="京ICP证140571号" target="_blank">京ICP证140571号</a> | 京公网安备 11010802017721</p>
+            </div>
+            <div class="edx_logo cf fr">
+                <a   target="_blank"><img src="static/images/edx_logo.262fca70a49b.png"  /></a>
+            </div>
+        </div>
+    </div>
+</footer>
 		 <link href="{{ URL::asset('js/require.2d213b58c463.js') }}" rel="stylesheet" type="text/js"/>
 		 <link href="{{ URL::asset('js/appCommon.2ee048cac1c3.js') }}" rel="stylesheet" type="text/js"/>
 		 <link href="{{ URL::asset('js/homepage.ea28864f00b2.js') }}" rel="stylesheet" type="text/js"/>

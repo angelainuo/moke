@@ -28,7 +28,7 @@
 	</section>
 	<section class="wrap index_classify_list" id="index_classify_list">
 		<ul class="cf">
-
+			<!-- <a href='{{ URL("/geren") }}'>11111111111111111111</a> -->
 			<li class="computer">
 			    <div class="title">
 			    	<a class="title_a" href="{{ URL::asset('./course/1') }}"   title="计算机" target="_blank" data-click="onClick" data-element="1" data-block="CATEGORIES">

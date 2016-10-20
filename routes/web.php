@@ -15,6 +15,8 @@ Route::get('/admin', function () {
     return view('admin.index.index');
 });
 
+Route::get('/geren','ColageController@geren');
+Route::get('/xiugai','ColageController@xiugai');
 
 Route::get('/','ColageController@shouye');
 Route::get('/courses','ClassController@index');
@@ -46,6 +48,8 @@ Route::post('/4','ResgController@res');
 
 Route::post('/demo11','LoginController@dologin');
 Route::get('/demo12','LogoutController@logout');
+Route::post('/huifu','ColageController@huifu');
+Route::post('/tiezi','ColageController@tiezi');
 
 //访问base
 // Route::get("/admin",function() {

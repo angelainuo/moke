@@ -24,6 +24,7 @@
 	<link href="{{ URL::asset('css/forumproject.381f0489b532.css') }}" rel="stylesheet" type="text/css"/>
 	<link href="{{ URL::asset('css/courseabout.58dd313e99a6.css') }}" rel="stylesheet" type="text/css"/>
 	<link href="{{ URL::asset('css/index.aadc42de2b12.css') }}" rel="stylesheet" type="text/css"/>
+	<link href="{{ URL::asset('css/dashboard.ded75b0da000.css') }}" rel="stylesheet" type="text/css"/>
 
 	<style>
 		.top_inner, .top {
@@ -91,13 +92,17 @@
 					</ul>
             </div>
 			<div class="fr header_container cf">
-				<form class="header_container_search fl cf" id="header_search" method="get"  data-block="GLOBLNAV" data-description="TOSEARCH">
-					<input class="fl" type="search" name="query" placeholder="课程、老师、学校" autocomplete="off">
-                    <button class="header_container_submit fl"></button>
-                    <div class="search_header_suggestion" style="display: none;"></div>
-				</form>
 				<div id="header_login_register" class="fl cf">
-					
+					@if(session('user'))
+					<a href="{{ URL('/geren/') }}">{{ session('user')->nickName }}</a>
+					<span>|</span>
+					<a href="{{ URL('/demo12') }}">退出</a>
+					@else
+							<li class="openlogin"><a href="http://www.jq22.com/" onclick="return false;">登录</a></li>
+
+							<li class="reg"><a href="" onclick="return false;">注册</a></li>
+
+					@endif
 				</div>
             </div>
 		</div>

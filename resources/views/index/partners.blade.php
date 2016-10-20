@@ -7,7 +7,7 @@
 		<ul class="cf">
 			@foreach($list as $collage)
 			<li>
-                <a href='{{ URL("course/$college->id") }}'  title="清华大学慕课" target="_blank">
+                <a href='{{ URL("course/$collage->id") }}'  title="清华大学慕课" target="_blank">
 					<div class="img">
                         <span><img src="school_card/tsh.cefcd8351cee.png"  alt="清华大学慕课" title="清华大学慕课" /></span>
 					</div>

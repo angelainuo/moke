@@ -17,7 +17,7 @@
                     <div class="postref cf">
                         <img class="touxiang_img" src="../../../storage.xuetangx.com/xuetangx/users/info/avatar/avatar-370631-20160809113232.png"  >
 
-                        <div class="author"><a href="http://bad_redirect" >学堂活动小队长♂</a></div>
+                        <div class="author"><a href="http://bad_redirect" >{{ $post->nickName }}</a></div>
                         <div class="last_send_time fr">2016-08-30 12:45:50</div>
                     </div>
                     <div class="postdetail_content" data-innerclick="innerClick" data-block="CONTENT" data-description="PRIMARYINNERNAV">
@@ -31,14 +31,7 @@
                     </div>
                     <div class="postdetail_toolbar fr"
                          data-init='{"post": "2423", "reply_to": "370631", "object_type": "post"}'>
-                         <div class="fl sbtn">
-                                <div class="share-box">
-                                    <a data-block="ACTIONS" data-description="TOSHARE#WECHAT" data-click="onClick" title="分享到微信" class="weixin" target="_blank">B</a>
-                                    <a data-block="ACTIONS" data-description="TOSHARE#WEIBO" data-click="onClick" title="分享到新浪微博" class="sina" target="_blank">r</a>
-                                    <a data-block="ACTIONS" data-description="TOSHARE#QQ" data-click="onClick" title="分享到QQ空间" class="zone" target="_blank">E</a>
-                                    <a data-block="ACTIONS" data-description="TOSHARE#DOUBAN" data-click="onClick" title="分享到豆瓣" class="dou" target="_blank">D</a>
-                                </div>
-                            </div>
+
                         <a class="share_btn" href="javascript:" data-content="交学友，看资讯，晒笔记，来学堂在线广场，You are what you MOOC～" data-click="onClick" data-block="ACTIONS" data-description="TOSHARE"><span class="share_font"></span></a>
                         <a class="comment_btn" title="回复" href="#commentRedirectPosition" data-click="onClick" data-block="ACTIONS" data-description="TOCOMMENT"><span
                                 class="comment_font"></span>（<span>68</span>）</a>
@@ -52,21 +45,17 @@
                 <div class="replypart scanimg">
 
                         <h2>回复：</h2>
-
+                          @foreach($data as $reply)
                             <div class="reply cf" id=1 data-element="1" data-length="limit">
                                 <div class="reply_position cf">
                                     <div class="reply_position_header cf">
                                         <h3 class="fl">
-                                        <span class="stick"></span><a>Axier小哀</a>
+                                        <span class="stick"></span><a>{{ $reply->nickName }}</a>
                                         </h3>
-                                        <div class="floor_time fr"><span class="floor">1楼</span>
 
-                                            <span class="last_send_time">2016-09-01 13:51:50</span>
-
-                                        </div>
                                     </div>
                                     <div class="replycontent  cf">
-                                        <div class="replycontenttext" data-innerclick="innerClick" data-block="CONTENT" data-description="REPLYINNERNAV"><p>赞一个●━●</p></div>
+                                        <div class="replycontenttext" data-innerclick="innerClick" data-block="CONTENT" data-description="REPLYINNERNAV"><p>{{  $reply->contents }}</p></div>
                                         <div class="daizhu cf ">
                                                 <div class="rinfo fr"
                                                      data-init='{"post": "2423", "comment_id": "1796815", "reply_to": "3736117", "reference": "1796815", "object_type": "comment"}' >
@@ -75,18 +64,32 @@
                                     </div>
                                   </div>
                                 </div>
-
+                                @endforeach
                                 </div>
 
             <div id="commentRedirectPosition">
-                    <div class="postdetail_textarea_unlogin">
-                        <div class="textarea_bar">
-                            <h2>请先<a id="loginFirst">登录</a></h2>
-                        </div>
-                        <div class="input_post_textarea">
-                            <p>说点什么吧～</p>
-                        </div>
-                    </div>
+              @if(session('user'))
+              <div class="postdetail_textarea_unlogin">
+                  <div class="textarea_bar">
+                      <h2>回复：</h2>
+                  </div>
+                  <div class="input_post_textarea">
+                    <form action="{{ URL('/huifu') }}" method="post">
+                      <input type="hidden" name="pid" value="{{ $post->id }}">
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      <input type="hidden" name="uid" value="{{ session('user')->id }}">
+                      <textarea name="contents" style="width:650px;height:100px"></textarea>
+                      <input type="submit" value="提交">提交</input>
+                    </form>
+                  </div>
+              </div>
+							@else
+					        <li class="openlogin"><a href="http://www.jq22.com" onclick="return false;">登录</a></li>
+
+					        <li class="reg"><a href="" onclick="return false;">注册</a></li>
+
+							@endif
+
             </div>
 
         </div>

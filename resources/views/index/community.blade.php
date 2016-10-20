@@ -83,7 +83,11 @@
                 <a href="{{ URL('./community') }}"    target="_blank" class="view_whole">笔记</a>
                 <a href="{{ URL('./community') }}"    target="_blank" class="view_whole">资讯</a>
                 <a href="{{ URL('./community') }}"    target="_blank" class="view_whole">灌水</a>
+                @if(session('user'))
                 <a href="{{ URL('./add') }}"  class="post_btn fr" id="postBtn" target="_blank" data-click="onClick" data-block="LIST" data-description="TOADDPOST"><span></span><em>我要发帖</em></a>
+                @else
+                @endif
+
             </div>
             <div class="post_body">
 
@@ -106,18 +110,6 @@
                             <p class="pcontent">{{ $post->content }}</p>
                         </div>
 
-                        <div class="pref">
-                            <div class="ptag">
-                                <a href="tag/1-1.htm"   target="_blank"><p>精华</p></a>
-                                <a href="tag/2-1.htm"   target="_blank"><p>推荐</p></a>
-                            </div>
-                            <div class="pinfo">
-                            <p class="author"><span></span><a href="http://bad_redirect" >学堂活动小队长♂</a></p>
-
-
-                                <p class="popular"><span></span>306人参与</p>
-                            </div>
-                        </div>
                     </div>
                     @endforeach
 
